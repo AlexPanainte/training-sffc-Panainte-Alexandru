@@ -1,0 +1,16 @@
+<template>
+    <div class="weather-container">
+        <template if:true={weatherData}>
+            <div class="weather-info">
+                <div class="temperature">{weatherData.main.temp}°C</div>
+                <div class="description">{weatherDescription}</div>
+                <div class="icon">
+                    <img src={weatherIconUrl} alt={weatherData.weather[0].description}>
+                </div>
+            </div>
+        </template>
+        <template if:false={weatherData}>
+            <div class="error-message">Failed to fetch weather data</div>
+        </template>
+    </div>
+</template>
